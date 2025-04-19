@@ -103,19 +103,20 @@ Answer: Amel1a <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-1
+Which user from the HR department was observed to be running scheduled tasks?
 
 
 <p align="center">
-    In the searh bar I inputted ' Image="C:\Users\Administrator\Documents\cmd.exe" md5 '. Only one event appeared with the MD5 hash value highlight
-<img width="1440" alt="Screenshot 2025-04-18 at 12 41 55 PM" src="https://github.com/user-attachments/assets/bd8e94df-f2eb-469f-b987-9d2cc8202d73" />
+    I didn't know how to find ran scheduled tasks on Splunk so I began to type scheduled task on the search bar and 'schtasks' appeared, I pressed enter and got results. The full search query was 'index=win-eventlogs schtasks'. I then clicked on the field UserName and saw several values. I looked at each user and only one of them where from the HR department.
+<img width="1440" alt="Screenshot 2025-04-19 at 9 00 09 AM" src="https://github.com/user-attachments/assets/53b63351-b8b6-4555-806c-16c2b784fc5d" />
+
 
 
 
 
 <br />
 <br />
-Answer is 290c7dfb01e50cea9e19da81a781af2c <br/>
+Answer: Chris.fort <br/>
 
 
 
