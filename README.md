@@ -33,16 +33,16 @@ The network is divided into three logical segments. It will help in the investig
 
 <h2>Questions</h2>
 
-- <b>How many logs are ingested from the month of March, 2022?</b>
-- <b>Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?</b>
-- <b>Which user from the HR department was observed to be running scheduled tasks?</b>
-- <b>Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.</b>
-- <b>To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?</b>
-- <b>What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)</b>
-- <b>Which third-party site was accessed to download the malicious payload?</b>
-- <b>What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?</b>
-- <b>The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?</b>
-- <b>What is the URL that the infected host connected to?</b>
+- <b>1. How many logs are ingested from the month of March, 2022?</b>
+- <b>2. Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?</b>
+- <b>3. Which user from the HR department was observed to be running scheduled tasks?</b>
+- <b>4. Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.</b>
+- <b>5. To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?.</b></b>
+- <b>6. What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)</b>
+- <b>7. Which third-party site was accessed to download the malicious payload?</b>
+- <b>8. What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?</b>
+- <b>9. The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?</b>
+- <b>10. What is the URL that the infected host connected to?</b>
 
 
 
@@ -64,7 +64,7 @@ The network is divided into three logical segments. It will help in the investig
 
 <b>Answer the question below <br/>
 
-How many logs are ingested from the month of March, 2022?
+1. How many logs are ingested from the month of March, 2022?
 
 <p align="center">
   First, I input into the search bar index=win-eventlogs since that is where all the information is stored and I also added EventID=4688 for the type of event discovered. Seecond, I adjusted the date range since it is asking about the month of March in the year 2022. After those two steps, I received the answer.
@@ -83,7 +83,7 @@ Answer: 13959 <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?
+2. Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?
 
 <p align="center">
     I had to do a google search on how to write the proper query for creating a list of users. I was about to find it in the splunk community website. I pressed enter of the completed search query(#1) and saw two users that appeared very similar. With a closer look, I spotted the imposter(#2).
@@ -103,7 +103,7 @@ Answer: Amel1a <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Which user from the HR department was observed to be running scheduled tasks?
+3. Which user from the HR department was observed to be running scheduled tasks?
 
 
 <p align="center">
@@ -126,7 +126,7 @@ Answer: Chris.fort <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.
+4. Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.</b>
 
 <p align="center">
     I decided to filter for only the HR employees. Because there were so many commands, I decided to add the filter ' | stats count by CommandLine ' to make it easier to analyze. I looked at all the results that were executables and the only one that stood out to me was the first result that appeared.
@@ -148,7 +148,7 @@ Answer: haroon <br/>
 
 <b>Answer the question below <br/>
 
-To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?
+5. To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?
 
 <p align="center">
     The answer was discussed in the previous question.
@@ -169,23 +169,17 @@ Answer: certutil.exe <br/>
 
 <b>Answer the question below <br/>
 
-1
+6. What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)
 
 <p align="center">
-    There was a hint to this question. The hint was ' Try sysmon event code 8 '. I did not know what event code 8 was so I did a quick google seach and this is what I received.
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/b194a710-dc5c-4947-9d73-5a95ae917a12" />
-    I put EventCode=8 into the search bar in Splunk and received two events.
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/64a232d5-29c4-4972-8172-52bc0f938b38" />
-    I went down looking in the interesting fields section and under the field 'SourceImage' was the answer.
-<img width="1440" alt="Screenshot 2025-04-18 at 2 48 34 PM" src="https://github.com/user-attachments/assets/ad4241fb-d4de-4f17-857b-7c12a1233a4a" />
-
+    Answer is part of same event as question 4.
 
 
 
 
 <br />
 <br />
-Answer is C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,C:\Windows\System32\wbem\unsecapp.exe <br/>
+Answer: 2022-03-04 <br/>
 
 
 
@@ -194,18 +188,17 @@ Answer is C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,C:\Windows\S
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-1
+7. Which third-party site was accessed to download the malicious payload?
 
 <p align="center">
-    In this question, instead of the field SourceImage, I went to TargetImage. I selected the process migation that wasn't used for the previous question for this question and it was the right answer.
-<img width="1440" alt="Screenshot 2025-04-18 at 3 06 46 PM" src="https://github.com/user-attachments/assets/09b0f8c3-2cc4-424f-b9ff-b804c1babd99" />
+     Answer is part of same event as question 4.
 
 
 
 
 <br />
 <br />
-Answer is C:\Windows\System32\lsass.exe <br/>
+Answer: controlc.com <br/>
 
 
 
@@ -213,16 +206,12 @@ Answer is C:\Windows\System32\lsass.exe <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-1
+8. What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?
+
 
 
 <p align="center">
-    To be honest, I did not know what I was looking for. The hint I received for this question was 'Try looking in the IIS logs for POST requests.' I did not know what IIS logs are but I have an idea of what POST requests are. So in the Splunk search bar I added POST and pressed enter. I started searching through the interested fields looking for 'IIS'. In the field sourcetype, it had 'iis' as a value so I added that into the search bar as well.
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/d93e3f9d-a8fe-4b9c-aa08-18cd2d2d296a" />
-    I don't know what a web shell exploit looks like so I googled 'web shell file type exploit'. While do some reading, I came across several and inputting them into the search bar in Splunk with the wildcard(*) attached hoping for a bite. The only one that produced results was 'asp'.
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/4bfe7d2f-1bd6-46a6-bedb-1336e6190cef" />
-    I saw a field named 'cs_uri_stem'. Although I don't know much of URIs, but I know it relates to webpages. I looked through its values and found the answer.
-<img width="1440" alt="Screenshot 2025-04-18 at 4 09 00 PM" src="https://github.com/user-attachments/assets/35b36219-b831-4060-a0af-1a1d87f0360a" />
+    Answer is part of same event as question 4.
 
 
 
@@ -230,7 +219,7 @@ Answer is C:\Windows\System32\lsass.exe <br/>
 
 <br />
 <br />
-Answer is i3gfPctK1c2x.aspx <br/>
+Answer: benign.exe<br/>
 
 
 
