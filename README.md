@@ -33,16 +33,17 @@ The network is divided into three logical segments. It will help in the investig
 
 <h2>Questions</h2>
 
-- <b>Can you identify the location of the ransomware?</b>
-- <b>What is the Sysmon event ID for the related file creation event?</b>
-- <b>Can you find the MD5 hash of the ransomware??</b>
-- <b>What file was saved to multiple folder locations?</b>
-- <b>What was the command the attacker used to add a new user to the compromised system?</b>
-- <b>The attacker migrated the process for better persistence. What is the migrated process image (executable), and what is the original process image (executable) when the attacker got on the system?</b>
-- <b>The attacker also retrieved the system hashes. What is the process image used for getting the system hashes?</b>
-- <b>What is the web shell the exploit deployed to the system?</b>
-- <b>What is the command line that executed this web shell?</b>
-- <b>What three CVEs did this exploit leverage? Provide the answer in ascending order.</b>
+- <b>How many logs are ingested from the month of March, 2022?</b>
+- <b>Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?</b>
+- <b>Which user from the HR department was observed to be running scheduled tasks?</b>
+- <b>Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.</b>
+- <b>To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?</b>
+- <b>What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)</b>
+- <b>Which third-party site was accessed to download the malicious payload?</b>
+- <b>What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?
+</b>
+- <bThe suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?</b>
+- <b>What is the URL that the infected host connected to?</b>
 
 
 <h2>Languages and Utilities Used</h2>
