@@ -40,9 +40,8 @@ The network is divided into three logical segments. It will help in the investig
 - <b>To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?</b>
 - <b>What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)</b>
 - <b>Which third-party site was accessed to download the malicious payload?</b>
-- <b>What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?
-</b>
-- <bThe suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?</b>
+- <b>What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?</b>
+- <b>The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?</b>
 - <b>What is the URL that the infected host connected to?</b>
 
 
