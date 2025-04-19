@@ -83,16 +83,19 @@ Answer: 13959 <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-1
+Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?
 
 <p align="center">
-    The answer was discussed during question 1
+    I had to do a google search on how to write the proper query for creating a list of users. I was about to find it in the splunk community website. I pressed enter of the completed search query(#1) and saw two users that appeared very similar. With a closer look, I spotted the imposter(#2).
+<img width="1440" alt="Screenshot 2025-04-19 at 8 23 18 AM" src="https://github.com/user-attachments/assets/45c7ad00-c41a-46a0-9b7a-79718a8efdc3" />
+
+
 
 
 
 <br />
 <br />
-Answer is EventCode=11 <br/>
+Answer: Amel1a <br/>
 
 
 
