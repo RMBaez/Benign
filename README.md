@@ -65,19 +65,17 @@ The network is divided into three logical segments. It will help in the investig
 
 <b>Answer the question below <br/>
 
-1
+How many logs are ingested from the month of March, 2022?
 
 <p align="center">
-  I was able to answer question after answering question 2 first. I looked up what the Sysmon event id for a created file.
-<img width="1206" alt="image" src="https://github.com/user-attachments/assets/e617867a-862c-413c-b425-0af9f8dcb796" />
-I input EventCode=11 into the search bar
-<img width="1440" alt="Screenshot 2025-04-18 at 12 31 52 PM" src="https://github.com/user-attachments/assets/8b7b694d-a33e-4a1a-9bb0-576140f744f2" />
-I scrolled down to the field images and clicked it. There I saw a result with an executable that looked suspicious. I inputting the finding and it was the correct answer.
+  First, I input into the search bar index=win-eventlogs since that is where all the information is stored and I also added EventID=4688 for the type of event discovered. Seecond, I adjusted the date range since it is asking about the month of March in the year 2022. After those two steps, I received the answer.
+  <img width="1440" alt="Screenshot 2025-04-19 at 8 02 11 AM" src="https://github.com/user-attachments/assets/2aa52a86-687c-472a-aff1-7ec2cd73bcc6" />
+
 
 
 <br />
 <br />
-Answer is C:\Users\Administrator\Documents\cmd.exe <br/>
+Answer: 13959 <br/>
 
 
 
