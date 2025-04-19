@@ -2,11 +2,33 @@
 
 
 <h2>Description</h2>
-Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server. 
-<img width="1294" alt="image" src="https://github.com/user-attachments/assets/56fb7f8d-7f5b-44bc-8ed9-22130f04496d" />
-Below are the error messages that the Exchange admin and employees see when they try to access anything related to Exchange or Outlook.
-<img width="1263" alt="image" src="https://github.com/user-attachments/assets/e16a3447-95bb-4925-8a1c-917c37d9fa9a" />
-Task: You are assigned to investigate this situation. Use Splunk to answer the questions below regarding the Conti ransomware.
+We will investigate host-centric logs in this challenge room to find suspicious process execution.
+
+<b>One of the client’s IDS indicated a potentially suspicious process execution indicating one of the hosts from the HR department was compromised. Some tools related to network information gathering / scheduled tasks were executed which confirmed the suspicion. Due to limited resources, we could only pull the process execution logs with Event ID: 4688 and ingested them into Splunk with the index win_eventlogs for further investigation.
+
+About the Network Information
+
+The network is divided into three logical segments. It will help in the investigation.
+
+<b>IT Department</b>
+
+- James
+- Moin
+- Katrina
+
+<b>HR department</b>
+
+- Haroon
+- Chris
+- Diana
+
+<b>Marketing department</b>
+
+- Bell
+- Amelia
+- Deepak
+  
+</b>
 
 
 <h2>Questions</h2>
