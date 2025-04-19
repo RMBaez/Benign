@@ -229,11 +229,12 @@ Answer: benign.exe<br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-1
+9. The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?
 
 <p align="center">
-   In the search car I put i3gfPctK1c2x.aspx. One event appeared. I looked at the field CommandLine and found the answer.
-<img width="1440" alt="Screenshot 2025-04-18 at 4 15 21 PM" src="https://github.com/user-attachments/assets/1c507042-c46a-46c4-b8c4-6095f998fc16" />
+   I copied and pasted the url ' https[:]//controlc[.]com/e4d11035 '(in its fanged format) into the website VirusTotal. I went to the detail section and kept scrolling until the saw the pattern mentioned in the question
+<img width="1440" alt="Screenshot 2025-04-19 at 10 36 13 AM" src="https://github.com/user-attachments/assets/27da7b70-1c00-417c-96c4-6a9f0a3162d4" />
+
 
 
 
@@ -241,9 +242,25 @@ Answer: benign.exe<br/>
 
 <br />
 <br />
-Answer: attrib.exe -r \\\\win-aoqkg2as2q7.bellybear.local\C$\Program Files\Microsoft\Exchange Server\V15\FrontEnd\HttpProxy\owa\auth\i3gfPctK1c2x.aspx <br/>
+Answer: THM{KJ&*H^B0}<br/>
 
 
 
 
+<h2>Program walk-through</h2>
+
+<b>Answer the question below <br/>
+10. What is the URL that the infected host connected to?
+
+<p align="center">
+   The answer is found in the same event as in question 4.
+
+
+
+
+
+
+<br />
+<br />
+Answer: https://controlc.com/e4d11035 <br/>
 
